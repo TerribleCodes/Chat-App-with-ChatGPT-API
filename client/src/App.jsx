@@ -14,6 +14,4 @@ function App() {
   );
 }
 
-// 47.20
-
 export default App;
