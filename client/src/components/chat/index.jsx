@@ -8,12 +8,13 @@ import Header from "@/components/customHeader";
 import StandardMessageForm from "@/components/customMessageForm/StandardMessageForm";
 import Ai from "../customMessageForm/Ai";
 import AiCode from "../customMessageForm/AiCode";
+import AiAssist from "../customMessageForm/AiAssist";
 
-function Chat() {
+function Chat({ user, secret }) {
   const chatProps = useMultiChatLogic(
     import.meta.env.VITE_PROJECT_ID,
-    "Madawa",
-    "admin123"
+    user,
+    secret
   );
   return (
     <div style={{ flexBasis: "100%" }}>
@@ -28,6 +29,9 @@ function Chat() {
           }
           if (chatProps.chat?.title.startsWith("AiCode_")) {
             return <AiCode props={props} activeChat={chatProps.chat} />;
+          }
+          if (chatProps.chat?.title.startsWith("AiAssist_")) {
+            return <AiAssist props={props} activeChat={chatProps.chat} />;
           }
           return (
             <StandardMessageForm props={props} activeChat={chatProps.chat} />

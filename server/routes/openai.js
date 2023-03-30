@@ -72,4 +72,25 @@ router.post("/code", async (req, res) => {
   }
 });
 
+router.post("/assist", async (req, res) => {
+  try {
+    const { text } = req.body;
+
+    const response = await openai.createChatCompletion({
+      model: "text-davinci-003",
+      prompt: `Finish my thought ${text}`,
+      temperature: 0.4,
+      max_tokens: 1024,
+      top_p: 1,
+      frequency_penalty: 0.5,
+      presence_penalty: 0,
+    });
+
+    res.status(200).json({ text: response.data.choices[0].text });
+  } catch (e) {
+    console.error("error: ", e);
+    res.status(500).json({ error: e.message });
+  }
+});
+
 export default router;
