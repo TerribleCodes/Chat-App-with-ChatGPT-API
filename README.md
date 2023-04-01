@@ -62,7 +62,7 @@ _Notice, you need client and server runs concurrently in different terminal sess
 | BOT_USER_SECRET | [User Password](https://rest.chatengine.io/#intro)                | 1234          |
 | OPEN_API_KEY    | [Project ID](https://chatengine.io/docs/react/v1/getting_started) | -             |
 
-### Run the server side
+### Run the client side
 
 ```terminal
 $ cd client          // go to client folder
@@ -79,7 +79,7 @@ $ npm run dev        // run it locally
 | VITE_BASE_URL   | URL to the locally running instance                               | http://localhost:1337 |
 | VITE_PROJECT_ID | [Project ID](https://chatengine.io/docs/react/v1/getting_started) | -                     |
 
-### Run the client side
+### Run the server side
 
 ```terminal
 $ cd server   // go to server folder
