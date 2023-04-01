@@ -116,6 +116,6 @@ Chat UI
 
 <p align="right">
    <a href="https://www.youtube.com/watch?v=ffEDkqfIzxM">
-     <i>This project was based on the tutorial by Build a Chat App with NEW ChatGPT API by Ed-Roh</i>
+     <i>This project was based on the tutorial - Build a Chat App with NEW ChatGPT API by Ed-Roh</i>
    </a>
 </p>
