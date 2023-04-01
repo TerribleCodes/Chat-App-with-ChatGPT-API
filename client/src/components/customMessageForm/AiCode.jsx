@@ -1,6 +1,5 @@
 import { usePostAiCodeMutation } from "@/state/api";
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import MessageFormUi from "./MessageFormUi";
 
 const AiCode = ({ props, activeChat }) => {
@@ -29,6 +28,7 @@ const AiCode = ({ props, activeChat }) => {
     setMessage("");
     setAttachment("");
   };
+
   return (
     <MessageFormUi
       setAttachment={attachment}

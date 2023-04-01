@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Chat from "./components/chat/index";
-import Login from "./components/login/index";
-import { setServers } from "dns";
+import Chat from "@/components/chat/index";
+import Login from "@/components/login/index";
 
 function App() {
   const [user, setUser] = useState(null);

@@ -6,9 +6,9 @@ import {
 } from "react-chat-engine-advanced";
 import Header from "@/components/customHeader";
 import StandardMessageForm from "@/components/customMessageForm/StandardMessageForm";
-import Ai from "../customMessageForm/Ai";
-import AiCode from "../customMessageForm/AiCode";
-import AiAssist from "../customMessageForm/AiAssist";
+import Ai from "@/components/customMessageForm/Ai";
+import AiCode from "@/components/customMessageForm/AiCode";
+import AiAssist from "@/components/customMessageForm/AiAssist";
 
 function Chat({ user, secret }) {
   const chatProps = useMultiChatLogic(
@@ -16,6 +16,7 @@ function Chat({ user, secret }) {
     user,
     secret
   );
+
   return (
     <div style={{ flexBasis: "100%" }}>
       <MultiChatSocket {...chatProps} />
@@ -33,6 +34,7 @@ function Chat({ user, secret }) {
           if (chatProps.chat?.title.startsWith("AiAssist_")) {
             return <AiAssist props={props} activeChat={chatProps.chat} />;
           }
+
           return (
             <StandardMessageForm props={props} activeChat={chatProps.chat} />
           );

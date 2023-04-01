@@ -1,14 +1,12 @@
-import React from "react";
 import { useState, useEffect } from "react";
 import { usePostLoginMutation, usePostSignUpMutation } from "@/state/api";
-import { SingleChatSocket } from "react-chat-engine-advanced";
 
 function Login({ setUser, setSecret }) {
   const [isRegister, setIsRegister] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [triggerLogin, resultLogin] = usePostLoginMutation();
-  const [triggerSignup] = usePostLoginMutation();
+  const [triggerSignup] = usePostSignUpMutation();
 
   const handleLogin = () => {
     triggerLogin({ username, password });
@@ -28,13 +26,14 @@ function Login({ setUser, setSecret }) {
   return (
     <div className="login-page">
       <div className="login-container">
-        <h2 className="title">CHATGPT APP</h2>
+        <h2 className="title">Chat App (Powered with OpenAI)</h2>
         <p
           className="register-change"
           onClick={() => setIsRegister(!isRegister)}
         >
           {isRegister ? "Already a user" : "Are you a new user"}
         </p>
+
         <div>
           <input
             className="login-input"
@@ -42,18 +41,22 @@ function Login({ setUser, setSecret }) {
             placeholder="Username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-          ></input>
+          />
           <input
             className="login-input"
             type="password"
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-          ></input>
+          />
         </div>
+
         <div className="login-actions">
-          {isRegister >
-          (
+          {isRegister ? (
+            <button type="button" onClick={handleRegister}>
+              Register
+            </button>
+          ) : (
             <button type="button" onClick={handleLogin}>
               Login
             </button>

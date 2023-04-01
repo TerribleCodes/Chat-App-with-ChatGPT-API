@@ -15,6 +15,7 @@ const MessageFormUi = ({
   handleKeyDown,
 }) => {
   const [preview, setPreview] = useState("");
+
   return (
     <div className="message-form-container">
       {preview && (
@@ -73,6 +74,7 @@ const MessageFormUi = ({
               </div>
             )}
           </Dropzone>
+
           <hr className="vertical-line" />
           <PaperAirplaneIcon
             className="message-form-icon-airplane"
