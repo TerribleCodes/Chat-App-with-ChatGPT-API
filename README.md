@@ -19,7 +19,7 @@ Expressjs, React/Redux, Nodejs
 ## Clone the repository
 
 ```terminal
-$ git clone https://github.com/TerribleCodes/Chat_App_with_ChatGPT_API.git
+$ git clone https://github.com/TerribleCodes/Chat-App-with-ChatGPT-API.git
 ```
 
 ## Project structure
